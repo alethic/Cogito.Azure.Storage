@@ -33,17 +33,19 @@ namespace Cogito.Components.Azure.Storage.Tables
         /// <returns></returns>
         public CloudTableClient CreateCloudTableClient()
         {
-            if (options.Value.ServiceUri != null)
-                if (options.Value.AccountName != null)
-                    return new CloudTableClient(options.Value.ServiceUri, new StorageCredentials(options.Value.AccountName, options.Value.AccountKey));
-
-            if (options.Value.AccountName != null)
-                return new CloudStorageAccount(new StorageCredentials(options.Value.AccountName, options.Value.AccountKey), true).CreateCloudTableClient();
-
             if (options.Value.ConnectionString != null)
                 return CloudStorageAccount.Parse(options.Value.ConnectionString).CreateCloudTableClient();
 
-            throw new InvalidOperationException("Cannot retrieve Cloud Table Client, no connection method specified.");
+            var uri = options.Value.TableServiceUri;
+            if (uri == null && options.Value.AccountName != null)
+                uri = new Uri($"https://{options.Value.AccountName}.table.core.windows.net/");
+            if (uri == null)
+                throw new InvalidOperationException("Could not determine Table Service URI.");
+
+            if (options.Value.AccountKey != null && options.Value.AccountName != null)
+                return new CloudTableClient(uri, new StorageCredentials(options.Value.AccountName, options.Value.AccountKey));
+
+            throw new InvalidOperationException("Cannot retrieve Table Service Client, no connection method specified.");
         }
 
     }

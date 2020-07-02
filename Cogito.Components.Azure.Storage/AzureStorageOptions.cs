@@ -13,9 +13,29 @@ namespace Cogito.Components.Azure.Storage
     {
 
         /// <summary>
-        /// URI for the storage account. If provided the current Azure Identity will be used for connections.
+        /// URI for the Blob service.
         /// </summary>
-        public Uri ServiceUri { get; set; }
+        public Uri BlobServiceUri { get; set; }
+
+        /// <summary>
+        /// URI for the Share service.
+        /// </summary>
+        public Uri ShareServiceUri { get; set; }
+
+        /// <summary>
+        /// URI for the Queue service.
+        /// </summary>
+        public Uri QueueServiceUri { get; set; }
+
+        /// <summary>
+        /// URI for the table service.
+        /// </summary>
+        public Uri TableServiceUri { get; set; }
+
+        /// <summary>
+        /// Allow usage of the default system credentials. Does not apply to Share services.
+        /// </summary>
+        public bool UseDefaultCredential { get; set; } = true;
 
         /// <summary>
         /// Alternatively, connection string for Azure storage account.
