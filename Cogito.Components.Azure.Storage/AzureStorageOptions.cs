@@ -8,7 +8,7 @@ namespace Cogito.Components.Azure.Storage
     /// <summary>
     /// Options for Azure Storage.
     /// </summary>
-    [RegisterOptions("Azure.Storage")]
+    [RegisterOptions("Cogito:Components:Azure:Storage")]
     public class AzureStorageOptions
     {
 
