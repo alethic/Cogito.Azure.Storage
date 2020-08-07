@@ -4,8 +4,8 @@
         <Company>Alethic Solutions</Company>
         <RepositoryUrl>https://github.com/alethic/Cogito.Components.Azure.Storage</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageLicenseUrl></PackageLicenseUrl>
         <PackageProjectUrl>https://github.com/alethic/Cogito.Components.Azure.Storage</PackageProjectUrl>
+        <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
         <PackageIcon>icon.png</PackageIcon>
         <LangVersion>8.0</LangVersion>
     </PropertyGroup>
