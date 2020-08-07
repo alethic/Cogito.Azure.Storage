@@ -6,7 +6,10 @@
         <RepositoryType>git</RepositoryType>
         <PackageLicenseUrl></PackageLicenseUrl>
         <PackageProjectUrl>https://github.com/alethic/Cogito.Components.Azure.Storage</PackageProjectUrl>
-        <PackageIcon>$(MSBuildThisFileDirectory)icon.png</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
         <LangVersion>8.0</LangVersion>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)icon.png" Pack="true" PackagePath="" />
+    </ItemGroup>
 </Project>
