@@ -14,7 +14,6 @@
         <PackageReference Include="Cogito.Components.Azure.Identity" Version="0.1.5" />
         <PackageReference Include="Cogito.Extensions.Options.Configuration.Autofac" Version="2.0.10" />
         <PackageReference Include="Cogito.Serilog.Autofac" Version="2.0.5" />
-        <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.7" />
     </ItemGroup>
 
 </Project>
