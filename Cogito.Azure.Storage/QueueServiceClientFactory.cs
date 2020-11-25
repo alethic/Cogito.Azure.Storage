@@ -3,19 +3,16 @@
 using Azure.Storage;
 using Azure.Storage.Queues;
 
-using Cogito.Autofac;
-using Cogito.Components.Azure.Identity;
+using Cogito.Azure.Identity;
 
 using Microsoft.Extensions.Options;
 
-namespace Cogito.Components.Azure.Storage
+namespace Cogito.Azure.Storage
 {
 
     /// <summary>
     /// Provides instances of an Azure Storage queue client.
     /// </summary>
-    [RegisterAs(typeof(QueueServiceClientFactory))]
-    [RegisterSingleInstance]
     public class QueueServiceClientFactory
     {
 

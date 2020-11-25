@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Description>Additional components for managing Azure Storage.</Description>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cogito.Autofac" Version="3.0.7" />
+        <PackageReference Include="Cogito.Azure.Identity.Autofac" Version="0.1.21" />
+        <PackageReference Include="Cogito.Extensions.Options.Configuration.Autofac" Version="2.0.19" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cogito.Azure.Storage\Cogito.Azure.Storage.csproj" />
+    </ItemGroup>
+
+</Project>

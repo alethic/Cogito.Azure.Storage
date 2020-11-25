@@ -1,18 +1,14 @@
 ﻿using System;
 
-using Cogito.Autofac;
-
 using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Extensions.Options;
 
-namespace Cogito.Components.Azure.Storage.Tables
+namespace Cogito.Azure.Storage.Tables
 {
 
     /// <summary>
     /// Provides instances of an Azure Storage table client.
     /// </summary>
-    [RegisterAs(typeof(CloudTableClientFactory))]
-    [RegisterSingleInstance]
     public class CloudTableClientFactory
     {
 

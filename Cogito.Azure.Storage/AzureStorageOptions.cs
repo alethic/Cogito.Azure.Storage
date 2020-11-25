@@ -1,15 +1,11 @@
 ﻿using System;
 
-using Cogito.Extensions.Options.Configuration.Autofac;
-
-namespace Cogito.Components.Azure.Storage
+namespace Cogito.Azure.Storage
 {
 
     /// <summary>
     /// Options for Azure Storage.
     /// </summary>
-    [RegisterOptions("Azure:Storage")]
-    [RegisterOptions("Cogito:Components:Azure:Storage")]
     public class AzureStorageOptions
     {
 

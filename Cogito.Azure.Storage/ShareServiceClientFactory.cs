@@ -3,18 +3,14 @@
 using Azure.Storage;
 using Azure.Storage.Files.Shares;
 
-using Cogito.Autofac;
-
 using Microsoft.Extensions.Options;
 
-namespace Cogito.Components.Azure.Storage
+namespace Cogito.Azure.Storage
 {
 
     /// <summary>
     /// Provides instances of an Azure Storage share service client.
     /// </summary>
-    [RegisterAs(typeof(ShareServiceClientFactory))]
-    [RegisterSingleInstance]
     public class ShareServiceClientFactory
     {
 
