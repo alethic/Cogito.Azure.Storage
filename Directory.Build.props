@@ -2,9 +2,9 @@
     <PropertyGroup>
         <Authors>Jerome Haltom</Authors>
         <Company>Alethic Solutions</Company>
-        <RepositoryUrl>https://github.com/alethic/Cogito.Components.Azure.Storage</RepositoryUrl>
+        <RepositoryUrl>https://github.com/alethic/Cogito.Azure.Storage</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageProjectUrl>https://github.com/alethic/Cogito.Components.Azure.Storage</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/alethic/Cogito.Azure.Storage</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>icon.png</PackageIcon>
         <LangVersion>8.0</LangVersion>

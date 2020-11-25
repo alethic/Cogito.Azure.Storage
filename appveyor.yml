@@ -3,7 +3,7 @@ configuration: Release
 platform: Any CPU
 
 install:
-  - choco install gitversion.portable -pre -y
+  - choco install gitversion.portable -y
 
 before_build:
   - ps: gitversion /l console /output buildserver
@@ -17,18 +17,19 @@ before_build:
 
 build:
   verbosity: minimal
-  project: Cogito.Components.Azure.Storage.sln
+  project: Cogito.Azure.Storage.sln
 
 artifacts:
   - path: pkg\*.nupkg
-    name: Cogito.Components.Azure.Storage
+    name: Cogito.Azure.Storage
 
 deploy:
-  provider: NuGet
-  server: https://nuget.pkg.github.com/alethic/index.json
-  username: wasabii
-  api_key:
-    secure: 7KMGqRm3xSXVWGq+DM0EBZL2KXGW5VXgDD774n4dB5xEQA/Febc7GbwhZIkvZeV1
-  skip_symbols: false
-  symbol_server:
-  artifact: /.*\.nupkg/
+  - provider: NuGet
+    server: https://nuget.pkg.github.com/alethic/index.json
+    username: wasabii
+    api_key:
+      secure: u7+1z/CZGBli+CiDxHSQetMjE1dbaf1f9eJtSCb8wifl7s1+AdnhWjnsjGQaEsAw
+    skip_symbols: false
+    symbol_server:
+    artifact: /.*\.nupkg/
+
