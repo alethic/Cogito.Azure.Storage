@@ -36,19 +36,19 @@ namespace Cogito.Azure.Storage
         /// <returns></returns>
         public QueueServiceClient CreateQueueServiceClient()
         {
-            if (options.Value.ConnectionString != null)
+            if (string.IsNullOrEmpty(options.Value.ConnectionString) == false)
                 return new QueueServiceClient(options.Value.ConnectionString);
 
             var uri = options.Value.QueueServiceUri;
-            if (uri == null && options.Value.AccountName != null)
+            if (uri == null && string.IsNullOrEmpty(options.Value.AccountName) == false)
                 uri = new Uri($"https://{options.Value.AccountName}.queue.core.windows.net/");
             if (uri == null)
                 throw new InvalidOperationException("Could not determine Queue Service URI.");
 
-            if (options.Value.AccountKey == null || options.Value.UseDefaultCredential)
+            if (string.IsNullOrEmpty(options.Value.AccountKey) || options.Value.UseDefaultCredential)
                 return new QueueServiceClient(uri, credential);
 
-            if (options.Value.AccountKey != null && options.Value.AccountName != null)
+            if (string.IsNullOrEmpty(options.Value.AccountKey) == false && string.IsNullOrEmpty(options.Value.AccountName) == false)
                 return new QueueServiceClient(uri, new StorageSharedKeyCredential(options.Value.AccountName, options.Value.AccountKey));
 
             throw new InvalidOperationException("Cannot retrieve Queue Service Client, no connection method specified.");

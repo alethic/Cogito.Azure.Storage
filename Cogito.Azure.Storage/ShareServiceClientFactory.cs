@@ -31,16 +31,16 @@ namespace Cogito.Azure.Storage
         /// <returns></returns>
         public ShareServiceClient CreateShareServiceClient()
         {
-            if (options.Value.ConnectionString != null)
+            if (string.IsNullOrEmpty(options.Value.ConnectionString) == false)
                 return new ShareServiceClient(options.Value.ConnectionString);
 
             var uri = options.Value.ShareServiceUri;
-            if (uri == null && options.Value.AccountName != null)
+            if (uri == null && string.IsNullOrEmpty(options.Value.AccountName) == false)
                 uri = new Uri($"https://{options.Value.AccountName}.file.core.windows.net/");
             if (uri == null)
                 throw new InvalidOperationException("Could not determine Share Service URI.");
 
-            if (options.Value.AccountKey != null && options.Value.AccountName != null)
+            if (string.IsNullOrEmpty(options.Value.AccountKey) == false && string.IsNullOrEmpty(options.Value.AccountName) == false)
                 return new ShareServiceClient(uri, new StorageSharedKeyCredential(options.Value.AccountName, options.Value.AccountKey));
 
             throw new InvalidOperationException("Cannot retrieve Share Service Client, no connection method specified.");
