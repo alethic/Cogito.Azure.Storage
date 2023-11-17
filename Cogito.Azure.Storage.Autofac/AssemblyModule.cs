@@ -1,4 +1,4 @@
-﻿using Autofac; 
+﻿using Autofac;
 
 using Cogito.Autofac;
 using Cogito.Extensions.Options.Configuration.Autofac;
