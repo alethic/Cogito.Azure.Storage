@@ -5,18 +5,32 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7271F8CF-C4EC-47FE-91F3-FF3331482C4F}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		Cogito.Azure.Storage.dist.msbuildproj = Cogito.Azure.Storage.dist.msbuildproj
+		.github\workflows\Cogito.Azure.Storage.yml = .github\workflows\Cogito.Azure.Storage.yml
 		Directory.Build.props = Directory.Build.props
 		GitVersion.yml = GitVersion.yml
+		global.json = global.json
+		LICENSE = LICENSE
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Autofac", "Cogito.Azure.Storage.Autofac\Cogito.Azure.Storage.Autofac.csproj", "{276C6973-869A-40C6-B92B-1D57F2F289CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Autofac", "src\Cogito.Azure.Storage.Autofac\Cogito.Azure.Storage.Autofac.csproj", "{276C6973-869A-40C6-B92B-1D57F2F289CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage", "Cogito.Azure.Storage\Cogito.Azure.Storage.csproj", "{5768D574-CEC7-41FF-B588-8AA034FF56FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage", "src\Cogito.Azure.Storage\Cogito.Azure.Storage.csproj", "{5768D574-CEC7-41FF-B588-8AA034FF56FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Tables", "Cogito.Azure.Storage.Tables\Cogito.Azure.Storage.Tables.csproj", "{EC9F6C7C-F73A-4FDF-93B5-40DD9EBB68F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Tables", "src\Cogito.Azure.Storage.Tables\Cogito.Azure.Storage.Tables.csproj", "{EC9F6C7C-F73A-4FDF-93B5-40DD9EBB68F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Tables.Autofac", "Cogito.Azure.Storage.Tables.Autofac\Cogito.Azure.Storage.Tables.Autofac.csproj", "{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cogito.Azure.Storage.Tables.Autofac", "src\Cogito.Azure.Storage.Tables.Autofac\Cogito.Azure.Storage.Tables.Autofac.csproj", "{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B65EECEB-4391-468C-A2EE-A0359B0C16F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{B06579BE-F9DA-414E-8DF1-69641D9AFFBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-tests", "src\dist-tests\dist-tests.csproj", "{97B87AA8-540C-4092-B2AB-020192D0248C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dist-nuget", "src\dist-nuget\dist-nuget.csproj", "{18647DA8-7008-4942-BD74-578498584097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,9 +54,25 @@ Global
 		{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B87AA8-540C-4092-B2AB-020192D0248C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B87AA8-540C-4092-B2AB-020192D0248C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B87AA8-540C-4092-B2AB-020192D0248C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B87AA8-540C-4092-B2AB-020192D0248C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18647DA8-7008-4942-BD74-578498584097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18647DA8-7008-4942-BD74-578498584097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18647DA8-7008-4942-BD74-578498584097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18647DA8-7008-4942-BD74-578498584097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{276C6973-869A-40C6-B92B-1D57F2F289CC} = {B65EECEB-4391-468C-A2EE-A0359B0C16F5}
+		{5768D574-CEC7-41FF-B588-8AA034FF56FC} = {B65EECEB-4391-468C-A2EE-A0359B0C16F5}
+		{EC9F6C7C-F73A-4FDF-93B5-40DD9EBB68F7} = {B65EECEB-4391-468C-A2EE-A0359B0C16F5}
+		{12EF3BE8-CA7F-49B5-B30A-4A2584CFF480} = {B65EECEB-4391-468C-A2EE-A0359B0C16F5}
+		{97B87AA8-540C-4092-B2AB-020192D0248C} = {B06579BE-F9DA-414E-8DF1-69641D9AFFBA}
+		{18647DA8-7008-4942-BD74-578498584097} = {B06579BE-F9DA-414E-8DF1-69641D9AFFBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF4B3820-4206-4316-82A5-DEA5792C6A71}
