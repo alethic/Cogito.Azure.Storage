@@ -1,5 +1,6 @@
 ﻿using System;
 
+using Azure.Core;
 using Azure.Storage;
 using Azure.Storage.Files.Shares;
 
@@ -15,14 +16,17 @@ namespace Cogito.Azure.Storage
     {
 
         readonly IOptions<AzureStorageOptions> options;
+        readonly TokenCredential? credential;
 
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="options"></param>
-        public ShareServiceClientFactory(IOptions<AzureStorageOptions> options)
+        /// <param name="credential"></param>
+        public ShareServiceClientFactory(IOptions<AzureStorageOptions> options, TokenCredential? credential)
         {
             this.options = options ?? throw new ArgumentNullException(nameof(options));
+            this.credential = credential ?? throw new ArgumentNullException(nameof(credential));
         }
 
         /// <summary>
@@ -39,6 +43,9 @@ namespace Cogito.Azure.Storage
                 uri = new Uri($"https://{options.Value.AccountName}.file.core.windows.net/");
             if (uri == null)
                 throw new InvalidOperationException("Could not determine Share Service URI.");
+
+            if (string.IsNullOrEmpty(options.Value.AccountKey) || options.Value.UseDefaultCredential)
+                return new ShareServiceClient(uri, credential);
 
             if (string.IsNullOrEmpty(options.Value.AccountKey) == false && string.IsNullOrEmpty(options.Value.AccountName) == false)
                 return new ShareServiceClient(uri, new StorageSharedKeyCredential(options.Value.AccountName, options.Value.AccountKey));

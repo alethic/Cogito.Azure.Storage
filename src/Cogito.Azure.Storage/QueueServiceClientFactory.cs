@@ -1,9 +1,8 @@
 ﻿using System;
 
+using Azure.Core;
 using Azure.Storage;
 using Azure.Storage.Queues;
-
-using Cogito.Azure.Identity;
 
 using Microsoft.Extensions.Options;
 
@@ -17,14 +16,14 @@ namespace Cogito.Azure.Storage
     {
 
         readonly IOptions<AzureStorageOptions> options;
-        readonly AzureIdentityCredential credential;
+        readonly TokenCredential? credential;
 
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="options"></param>
         /// <param name="credential"></param>
-        public QueueServiceClientFactory(IOptions<AzureStorageOptions> options, AzureIdentityCredential credential)
+        public QueueServiceClientFactory(IOptions<AzureStorageOptions> options, TokenCredential? credential)
         {
             this.options = options ?? throw new ArgumentNullException(nameof(options));
             this.credential = credential ?? throw new ArgumentNullException(nameof(credential));
