@@ -9,7 +9,7 @@ Publishes 4 packages: `Cogito.Azure.Storage`, `Cogito.Azure.Storage.Autofac`, `C
 ## Build and test
 
 ```shell
-dotnet restore Cogito.Azure.Storage.sln
+dotnet restore Cogito.Azure.Storage.slnx
 dotnet msbuild -p:Configuration=Release Cogito.Azure.Storage.dist.msbuildproj
 ```
 

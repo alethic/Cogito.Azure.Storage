@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/dist/">
+    <Project Path="src/dist-nuget/dist-nuget.csproj" />
+    <Project Path="src/dist-tests/dist-tests.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/Cogito.Azure.Storage.yml" />
+    <File Path=".gitignore" />
+    <File Path="appveyor.yml" />
+    <File Path="Cogito.Azure.Storage.dist.msbuildproj" />
+    <File Path="Directory.Build.props" />
+    <File Path="GitVersion.yml" />
+    <File Path="global.json" />
+    <File Path="LICENSE" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Cogito.Azure.Storage.Autofac/Cogito.Azure.Storage.Autofac.csproj" />
+    <Project Path="src/Cogito.Azure.Storage.Tables.Autofac/Cogito.Azure.Storage.Tables.Autofac.csproj" />
+    <Project Path="src/Cogito.Azure.Storage.Tables/Cogito.Azure.Storage.Tables.csproj" />
+    <Project Path="src/Cogito.Azure.Storage/Cogito.Azure.Storage.csproj" />
+  </Folder>
+</Solution>
